@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Skills - TEO</title>
+    <style>
+        /* Basic Reset & Modern Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Navigation Bar (Matches Main Site) */
+        nav { background-color: #2c3e50; padding: 15px; position: sticky; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #1abc9c; }
+
+        /* Main Container */
+        .skills-container { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Header section */
+        .skills-header { text-align: center; margin-bottom: 40px; }
+        .skills-header h1 { font-size: 2.5rem; color: #2c3e50; margin-bottom: 10px; }
+        .skills-header p { font-size: 1.1rem; color: #666; max-width: 600px; margin: 0 auto; }
+
+        /* Skills Grid Layout */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(450px, 1fr)); gap: 30px; }
+        @media (max-width: 600px) { .skills-grid { grid-template-columns: 1fr; } }
+
+        /* Individual Card Design */
+        .skills-card { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .skills-card h2 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 20px; border-bottom: 2px solid #3498db; padding-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
+        .skills-card h2 span { font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* Progress Bar Mechanics */
+        .skill-progress-wrapper { margin-bottom: 20px; }
+        .skill-progress-wrapper:last-child { margin-bottom: 0; }
+        .skill-info { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; color: #4a5568; }
+        
+        .progress-bar-bg { background-color: #edf2f7; height: 10px; border-radius: 5px; overflow: hidden; }
+        .progress-bar-fill { background: linear-gradient(90deg, #3498db, #1abc9c); height: 100%; border-radius: 5px; width: 0%; transition: width 1s ease-in-out; }
+
+        /* Meta tags / Keywords inside categories */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+        .tech-tag { background: #e0f2f1; color: #00796b; padding: 3px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="skills-container">
+        
+        <header class="skills-header">
+            <h1>Technical Core Competencies</h1>
+            <p>Computer Science academic foundation focusing on cross-platform mobile ecosystems, scalable server logic architectures, and relational structures.</p>
+        </header>
+
+        <div class="skills-grid">
+            
+            <!-- Category 1: Backend -->
+            <section class="skills-card">
+                <h2>Back-end Programming <span>Languages</span></h2>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>Java</span> <span>85%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                </div>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>PHP</span> <span>80%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">OOP Paradigms</span>
+                    <span class="tech-tag">MVC Design</span>
+                    <span class="tech-tag">CodeIgniter 4 Framework</span>
+                </div>
+            </section>
+
+            <!-- Category 2: Mobile -->
+            <section class="skills-card">
+                <h2>Mobile Development <span>Ecosystem</span></h2>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>Flutter (Dart)</span> <span>85%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Cross-Platform Compiling</span>
+                    <span class="tech-tag">State Management</span>
+                    <span class="tech-tag">Single Codebase Builds</span>
+                </div>
+            </section>
+
+            <!-- Category 3: DBMS -->
+            <section class="skills-card">
+                <h2>Database Management <span>DBMS</span></h2>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>SQL / MySQL</span> <span>80%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Relational Design</span>
+                    <span class="tech-tag">Data Normalization</span>
+                    <span class="tech-tag">Query Optimization</span>
+                </div>
+            </section>
+
+            <!-- Category 4: UI -->
+            <section class="skills-card">
+                <h2>User Interface <span>Front-End</span></h2>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>HTML / CSS</span> <span>90%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
+                </div>
+                
+                <div class="skill-progress-wrapper">
+                    <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
+                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
+                </div>
+                <div class="tech-tags">
+                    <span class="tech-tag">Responsive Layouts</span>
+                    <span class="tech-tag">Flexbox & CSS Grid</span>
+                    <span class="tech-tag">React Basics</span>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+</body>
+</html>
