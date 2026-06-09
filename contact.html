@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Teo Ming Zao</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Modern Design System & Variables (Cohesive with entire site) */
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --primary: #10b981; /* Emerald Accent */
+            --primary-hover: #059669;
+            --secondary: #3b82f6; /* Blue Accent */
+            --gradient-card: linear-gradient(135deg, #1e293b 0%, #111827 100%);
+            --border-radius: 16px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body { 
+            font-family: 'Plus Jakarta Sans', Arial, sans-serif; 
+            background-color: var(--bg-color); 
+            color: var(--text-main); 
+            line-height: 1.7; 
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Navigation Bar */
+        nav { 
+            background-color: rgba(15, 23, 42, 0.8); 
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 20px; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        nav .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        nav .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+        nav .logo span { color: var(--primary); }
+        nav ul { list-style: none; display: flex; gap: 30px; }
+        nav a { color: var(--text-muted); text-decoration: none; font-weight: 500; transition: var(--transition); font-size: 0.95rem; }
+        nav a:hover { color: var(--primary); }
+        nav a.active { color: var(--primary); font-weight: 600; }
+
+        /* Contact Layout Container */
+        .contact-container { max-width: 1200px; margin: 60px auto 100px auto; padding: 0 20px; }
+        
+        /* Header section */
+        .contact-header { text-align: center; margin-bottom: 60px; }
+        .contact-header h1 { font-size: 3rem; font-weight: 700; color: var(--text-main); margin-bottom: 15px; letter-spacing: -1px; }
+        .contact-header h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .contact-header p { font-size: 1.15rem; color: var(--text-muted); max-width: 600px; margin: 0 auto; }
+
+        /* Two Column Layout Grid */
+        .contact-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 50px; align-items: start; }
+
+        /* Info Column Styling */
+        .contact-info { display: flex; flex-direction: column; gap: 30px; }
+        .info-card {
+            background: rgba(255, 255, 255, 0.01);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            padding: 30px;
+            border-radius: var(--border-radius);
+        }
+        .info-card h3 { font-size: 1.2rem; color: var(--secondary); margin-bottom: 10px; font-weight: 600; }
+        .info-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .info-card a { color: var(--text-main); text-decoration: none; font-weight: 500; transition: var(--transition); }
+        .info-card a:hover { color: var(--primary); }
+
+        /* Form Card Layout Transformation */
+        .form-card {
+            background: var(--gradient-card);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: var(--transition);
+        }
+        .form-card:hover {
+            border-color: rgba(16, 185, 129, 0.2);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Form Controls & Inputs */
+        .form-group { margin-bottom: 25px; position: relative; }
+        .form-label {
+            display: block;
+            font-size: 0.85rem;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .form-control {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 8px;
+            padding: 14px 16px;
+            color: var(--text-main);
+            font-family: inherit;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 12px rgba(16, 185, 129, 0.15);
+            background: rgba(15, 23, 42, 0.9);
+        }
+        textarea.form-control { resize: vertical; min-height: 150px; }
+
+        /* Submit Action Button styling */
+        .btn-submit {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+            color: #0f172a;
+            border: none;
+            border-radius: 8px;
+            padding: 16px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: 0.5px;
+        }
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+            filter: brightness(1.1);
+        }
+        .btn-submit:active { transform: translateY(0); }
+
+        /* Responsive Breakpoint Layout rules */
+        @media (max-width: 850px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+            .contact-header h1 { font-size: 2.3rem; }
+            .form-card { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Navigation Bar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">MingZao<span>.</span></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <main class="contact-container">
+        
+        <header class="contact-header">
+            <h1>Get In <span>Touch</span></h1>
+            <p>Have an execution architecture to discuss, an integration puzzle, or a collaborative opportunity? Drop a secure transmission below.</p>
+        </header>
+
+        <div class="contact-grid">
+            
+            <!-- Left Column: Communication Directives -->
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>Direct Inbox</h3>
+                    <p><a href="mailto:your.real.gmail@gmail.com">your.real.gmail@gmail.com</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>Development Workspace</h3>
+                    <p>Faculty of Informatics and Computing</p>
+                    <p>Universiti Sultan Zainal Abidin (UniSZA)</p>
+                </div>
+                <div class="info-card">
+                    <h3>Version Control Nodes</h3>
+                    <p><a href="https://github.com/Portfolio-TEO_215" target="_blank">github.com/Portfolio-TEO_215</a></p>
+                </div>
+            </div>
+
+            <!-- Right Column: Live Transmission Gateway Form -->
+            <div class="form-card">
+                <!-- IMPORTANT SETUP: Replace 'your.real.gmail@gmail.com' with your actual Gmail account -->
+                <form action="https://formsubmit.co/your.real.gmail@gmail.com" method="POST">
+                    
+                    <!-- Anti-spam honey pot field hidden from user view -->
+                    <input type="text" name="_honey" style="display:none">
+                    
+                    <!-- Custom optimization configurations for FormSubmit redirection templates -->
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_subject" value="New Portfolio Portfolio-TEO_215 Transmission!">
+
+                    <div class="form-group">
+                        <label class="form-label" for="name">Identification / Name</label>
+                        <input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name or entity" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="email">Return Route Email Address</label>
+                        <input class="form-control" type="email" id="email" name="email" placeholder="name@example.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="message">Transmission Core Payload</label>
+                        <textarea class="form-control" id="message" name="message" placeholder="Type your detailed message or project objectives here..." required></textarea>
+                    </div>
+
+                    <button class="btn-submit" type="submit">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
