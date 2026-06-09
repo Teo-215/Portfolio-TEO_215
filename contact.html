@@ -218,15 +218,12 @@
             <!-- Right Column: Live Transmission Gateway Form -->
             <div class="form-card">
                 <!-- IMPORTANT SETUP: Replace 'your.real.gmail@gmail.com' with your actual Gmail account -->
-                <form action="https://formsubmit.co/your.real.gmail@gmail.com" method="POST">
-                    
-                    <!-- Anti-spam honey pot field hidden from user view -->
-                    <input type="text" name="_honey" style="display:none">
-                    
-                    <!-- Custom optimization configurations for FormSubmit redirection templates -->
-                    <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_subject" value="New Portfolio Portfolio-TEO_215 Transmission!">
+                <form action="https://api.web3forms.com/submit" method="POST">
+                      <input type="hidden" name="access_key" value="f2a3f170-612e-4169-b5ea-69a128fc53b1">
 
+               
+                    
+                    
                     <div class="form-group">
                         <label class="form-label" for="name">Identification / Name</label>
                         <input class="form-control" type="text" id="name" name="name" placeholder="Enter your full name or entity" required>
@@ -234,7 +231,7 @@
 
                     <div class="form-group">
                         <label class="form-label" for="email">Return Route Email Address</label>
-                        <input class="form-control" type="email" id="email" name="email" placeholder="name@example.com" required>
+                        <input class="form-control" type="email" id="email" email="email" placeholder="name@example.com" required>
                     </div>
 
                     <div class="form-group">
