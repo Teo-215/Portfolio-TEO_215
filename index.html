@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Basic Reset & Modern Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Navigation Bar */
+        nav { background-color: #2c3e50; padding: 15px; position: sticky; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #1abc9c; }
+
+        /* Hero / Introduction Section */
+        .hero { text-align: center; padding: 60px 20px; background: linear-gradient(135deg, #2c3e50, #3498db); color: white; }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto; opacity: 0.9; }
+
+        /* Portfolio Cards Layout */
+        .portfolio-section { max-width: 1200px; margin: 40px auto; padding: 0 20px; }
+        .portfolio-section h2 { text-align: center; margin-bottom: 30px; font-size: 2rem; color: #2c3e50; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+
+        /* Individual Project Card Styling */
+        .card { background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); overflow: hidden; transition: transform 0.3s; display: flex; flex-direction: column; }
+        .card:hover { transform: translateY(-5px); }
+        .card-content { padding: 25px; flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between; }
+        .card h3 { color: #2c3e50; margin-bottom: 15px; font-size: 1.4rem; }
+        .card p { color: #666; font-size: 0.95rem; margin-bottom: 20px; }
+        
+        /* Badges / Tech Stack Tags */
+        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+        .tag { background: #e0f2f1; color: #00796b; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
+
+        /* Call to Action Button */
+        .btn { display: inline-block; background-color: #3498db; color: white; text-decoration: none; padding: 10px 15px; border-radius: 5px; text-align: center; font-weight: bold; transition: background 0.2s; }
+        .btn:hover { background-color: #2980b9; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero / Introduction Section -->
+    <header class="hero">
+        <h1>Hi, I'm Teo Ming Zao</h1>
+        <p>Computer Science Student & Full Stack Developer undergraduade from UniSZA. Passionate about building functional software, cross-disciplinary ethics, and hardware integration.</p>
+    </header>
+
+    <!-- Project Cards Section -->
+    <main class="portfolio-section">
+        <h2>My Work & Experiences</h2>
+        
+        <div class="grid">
+            
+            <!-- Card 1: Task Manager Platform -->
+            <article class="card">
+                <div class="card-content">
+                    <div>
+                        <h3>Task Manager & Timetable Platform</h3>
+                        <p>A comprehensive scheduling platform designed for students to manage daily workflows, academic timetables, and assignment deadlines seamlessly in one centralized hub.</p>
+                    </div>
+                    <div>
+                        <div class="tags">
+                            <span class="tag">Full-Stack</span>
+                            <span class="tag">Database</span>
+                            <span class="tag">Productivity</span>
+                        </div>
+                        <a href="#" class="btn">View Project</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 2: IoT Hands-On Work -->
+            <article class="card">
+                <div class="card-content">
+                    <div>
+                        <h3>IoT Hands-On Development</h3>
+                        <p>Practical engineering experience building smart systems. Involves hardware integration, sensor data collection, and microcontrollers to bridge physical environments with software applications.</p>
+                    </div>
+                    <div>
+                        <div class="tags">
+                            <span class="tag">IoT</span>
+                            <span class="tag">Hardware</span>
+                            <span class="tag">Embedded Systems</span>
+                        </div>
+                        <a href="#" class="btn">View System</a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Card 3: Marketing & Tech Ethics -->
+            <article class="card">
+                <div class="card-content">
+                    <div>
+                        <h3>Tech Marketing & Ethics Study</h3>
+                        <p>An exploration into growth marketing and business strategy evaluated through a professional ethics framework. Focused on user privacy, dark patterns, and responsible software distribution.</p>
+                    </div>
+                    <div>
+                        <div class="tags">
+                            <span class="tag">Marketing</span>
+                            <span class="tag">Ethics</span>
+                            <span class="tag">Case Study</span>
+                        </div>
+                        <a href="#" class="btn">Read Analysis</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+</body>
+</html>
