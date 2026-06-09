@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Skills | Teo Ming Zao</title>
-    <!-- Google Fonts for Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -121,21 +120,48 @@
             color: var(--text-main); 
             font-size: 1.35rem; 
             font-weight: 600;
-            margin-bottom: 25px; 
+            margin-bottom: 20px; 
             display: flex; 
             flex-direction: column;
             gap: 4px;
         }
         .skills-card h2 span { font-size: 0.8rem; color: var(--primary); text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700; }
         
-        /* Interactive Skill Metrics (Visual Progress Indicators) */
-        .metric-group { margin-bottom: 18px; }
-        .metric-label { display: flex; justify-content: space-between; font-size: 0.95rem; color: #e2e8f0; margin-bottom: 6px; font-weight: 500; }
-        .metric-bar { background: rgba(255, 255, 255, 0.05); height: 6px; border-radius: 3px; overflow: hidden; position: relative; }
-        .metric-progress { height: 100%; border-radius: 3px; background: linear-gradient(90deg, var(--primary), var(--secondary)); width: 0; transition: width 1.5s ease-in-out; }
+        /* Provable Competency Indicators (Replacing the skill progress bars) */
+        .competency-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .competency-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: #cbd5e1;
+        }
+        .competency-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            margin-top: 8px;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+        .skills-card:hover .competency-dot {
+            background-color: var(--primary);
+            box-shadow: 0 0 8px var(--primary);
+        }
+        .competency-item strong {
+            color: var(--text-main);
+            font-weight: 600;
+        }
 
         /* Tech Tags inside categories */
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; border-top: 1px dashed rgba(255, 255, 255, 0.08); padding-top: 20px; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; border-top: 1px dashed rgba(255, 255, 255, 0.08); padding-top: 20px; }
         .tech-tag { background: rgba(255, 255, 255, 0.03); color: #cbd5e1; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; border: 1px solid rgba(255, 255, 255, 0.05); }
         .skills-card:hover .tech-tag { background: rgba(16, 185, 129, 0.08); color: var(--primary); border-color: rgba(16, 185, 129, 0.15); }
 
@@ -155,14 +181,10 @@
         }
         .principle-card h3 { font-size: 1.1rem; color: var(--secondary); margin-bottom: 8px; font-weight: 600; }
         .principle-card p { font-size: 0.9rem; color: var(--text-muted); line-height: 1.6; }
-
-        /* Trigger active state load simulation */
-        body:hover .metric-progress { width: var(--target-width); }
     </style>
 </head>
-<body onload="document.querySelectorAll('.metric-progress').forEach(el => el.style.width = el.getAttribute('data-progress'))">
+<body>
 
-    <!-- Unified Navigation Bar -->
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">MingZao<span>.</span></a>
@@ -175,7 +197,6 @@
         </div>
     </nav>
 
-    <!-- Main Container -->
     <main class="skills-container">
         
         <header class="skills-header">
@@ -183,24 +204,22 @@
             <p>An overview of my academic foundation and practical implementation capabilities in full-stack compilation, hardware infrastructure, and data relational modeling.</p>
         </header>
 
-        <!-- SECTION 1: Core Engineering Stacks -->
         <h2 class="section-title">Core Architecture Stacks</h2>
         <div class="skills-grid">
             
-            <!-- Category 1: Backend -->
             <section class="skills-card">
                 <h2><span>Server Logic</span>Backend Engineering</h2>
                 
-                <div class="metric-wrapper">
-                    <div class="metric-group">
-                        <div class="metric-label"><span>Java (Spring Boot / Core)</span><span>85%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="85%"></div></div>
-                    </div>
-                    <div class="metric-group">
-                        <div class="metric-label"><span>PHP (CodeIgniter Framework)</span><span>80%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="80%"></div></div>
-                    </div>
-                </div>
+                <ul class="competency-list">
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Java Spring Boot:</strong> Developing secure MVC architectures, token-based authentication, and stateful ledger APIs.</span>
+                    </li>
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>PHP CodeIgniter 4:</strong> Building modular service layers and decoupling high-traffic database query flows.</span>
+                    </li>
+                </ul>
 
                 <div class="tech-tags">
                     <span class="tech-tag">OOP Architectures</span>
@@ -210,20 +229,19 @@
                 </div>
             </section>
 
-            <!-- Category 2: Mobile -->
             <section class="skills-card">
                 <h2><span>Cross-Platform</span>Mobile Ecosystems</h2>
                 
-                <div class="metric-wrapper">
-                    <div class="metric-group">
-                        <div class="metric-label"><span>Flutter Framework</span><span>78%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="78%"></div></div>
-                    </div>
-                    <div class="metric-group">
-                        <div class="metric-label"><span>Dart Language</span><span>80%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="80%"></div></div>
-                    </div>
-                </div>
+                <ul class="competency-list">
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Flutter & Dart:</strong> Compiling unified codebases into multi-threaded applications with persistent local storage contexts.</span>
+                    </li>
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>State Management:</strong> Structuring reactive screen layouts to manage continuous asynchronous data updates.</span>
+                    </li>
+                </ul>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Single-Codebase Compiling</span>
@@ -233,20 +251,19 @@
                 </div>
             </section>
 
-            <!-- Category 3: DBMS -->
             <section class="skills-card">
                 <h2><span>Data Storage</span>Relational Databases</h2>
                 
-                <div class="metric-wrapper">
-                    <div class="metric-group">
-                        <div class="metric-label"><span>MySQL Administration</span><span>85%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="85%"></div></div>
-                    </div>
-                    <div class="metric-group">
-                        <div class="metric-label"><span>Structured SQL Queries</span><span>82%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="82%"></div></div>
-                    </div>
-                </div>
+                <ul class="competency-list">
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>MySQL Administration:</strong> Designing custom schemas with strict referential integrity rules and multi-table operations.</span>
+                    </li>
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Performance Tuning:</strong> Writing optimized relational queries to prevent indexing bottlenecks under heavy usage.</span>
+                    </li>
+                </ul>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Database Normalization</span>
@@ -256,20 +273,19 @@
                 </div>
             </section>
 
-            <!-- Category 4: UI / Front-End -->
             <section class="skills-card">
                 <h2><span>Client Interfaces</span>Web Presentation Layouts</h2>
                 
-                <div class="metric-wrapper">
-                    <div class="metric-group">
-                        <div class="metric-label"><span>JavaScript (ES6+ / React Basics)</span><span>75%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="75%"></div></div>
-                    </div>
-                    <div class="metric-group">
-                        <div class="metric-label"><span>HTML5 & CSS3 Architecture</span><span>90%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="90%"></div></div>
-                    </div>
-                </div>
+                <ul class="competency-list">
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Modern JS & React:</strong> Managing dynamic client-side collections and structural state boundaries cleanly.</span>
+                    </li>
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>CSS Grid & Flexbox:</strong> Authoring completely responsive, glassmorphic layout environments with seamless animations.</span>
+                    </li>
+                </ul>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Flexbox & Grid Layouts</span>
@@ -279,20 +295,19 @@
                 </div>
             </section>
 
-            <!-- NEW Category 5: Hardware/IoT Integration (Added Content Element) -->
             <section class="skills-card">
                 <h2><span>Physical Systems</span>Hardware & IoT Engineering</h2>
                 
-                <div class="metric-wrapper">
-                    <div class="metric-group">
-                        <div class="metric-label"><span>Arduino Integration</span><span>75%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="75%"></div></div>
-                    </div>
-                    <div class="metric-group">
-                        <div class="metric-label"><span>ESP8266 Microcontrollers</span><span>70%</span></div>
-                        <div class="metric-bar"><div class="metric-progress" data-progress="70%"></div></div>
-                    </div>
-                </div>
+                <ul class="competency-list">
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Microcontroller Firmware:</strong> Programming ESP8266 processors using the native Arduino core environment.</span>
+                    </li>
+                    <li class="competency-item">
+                        <span class="competency-dot"></span>
+                        <span><strong>Signal Management:</strong> Processing data signals from biometrics and accelerometer arrays directly onto local OLED screens.</span>
+                    </li>
+                </ul>
 
                 <div class="tech-tags">
                     <span class="tech-tag">Biometric Sensor Wiring</span>
@@ -304,7 +319,6 @@
 
         </div>
 
-        <!-- SECTION 2: Soft Skills & Engineering Methodologies (Added Content Element) -->
         <h2 class="section-title">Methodologies & Systems Fluency</h2>
         <div class="principles-grid">
             <div class="principle-card">
