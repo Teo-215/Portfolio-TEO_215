@@ -32,17 +32,14 @@
         .skills-card h2 { color: #2c3e50; font-size: 1.4rem; margin-bottom: 20px; border-bottom: 2px solid #3498db; padding-bottom: 8px; display: flex; align-items: center; justify-content: space-between; }
         .skills-card h2 span { font-size: 0.9rem; color: #888; text-transform: uppercase; letter-spacing: 1px; }
         
-        /* Progress Bar Mechanics */
-        .skill-progress-wrapper { margin-bottom: 20px; }
-        .skill-progress-wrapper:last-child { margin-bottom: 0; }
-        .skill-info { display: flex; justify-content: space-between; font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; color: #4a5568; }
-        
-        .progress-bar-bg { background-color: #edf2f7; height: 10px; border-radius: 5px; overflow: hidden; }
-        .progress-bar-fill { background: linear-gradient(90deg, #3498db, #1abc9c); height: 100%; border-radius: 5px; width: 0%; transition: width 1s ease-in-out; }
+        /* Core Skills List Layout */
+        .core-list { list-style: none; margin-bottom: 15px; }
+        .core-list li { font-size: 1.1rem; font-weight: 600; color: #2c3e50; margin-bottom: 8px; display: flex; align-items: center; }
+        .core-list li::before { content: "•"; color: #3498db; font-size: 1.5rem; margin-right: 10px; display: inline-block; line-height: 1; }
 
         /* Meta tags / Keywords inside categories */
-        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
-        .tech-tag { background: #e0f2f1; color: #00796b; padding: 3px 10px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; border-top: 1px dashed #e2e8f0; padding-top: 15px; }
+        .tech-tag { background: #e0f2f1; color: #00796b; padding: 4px 12px; border-radius: 4px; font-size: 0.85rem; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -71,15 +68,11 @@
             <section class="skills-card">
                 <h2>Back-end Programming <span>Languages</span></h2>
                 
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>Java</span> <span>85%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
-                </div>
-                
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>PHP</span> <span>80%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
-                </div>
+                <ul class="core-list">
+                    <li>Java</li>
+                    <li>PHP</li>
+                </ul>
+
                 <div class="tech-tags">
                     <span class="tech-tag">OOP Paradigms</span>
                     <span class="tech-tag">MVC Design</span>
@@ -91,10 +84,10 @@
             <section class="skills-card">
                 <h2>Mobile Development <span>Ecosystem</span></h2>
                 
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>Flutter (Dart)</span> <span>85%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 85%;"></div></div>
-                </div>
+                <ul class="core-list">
+                    <li>Flutter (Dart)</li>
+                </ul>
+
                 <div class="tech-tags">
                     <span class="tech-tag">Cross-Platform Compiling</span>
                     <span class="tech-tag">State Management</span>
@@ -106,10 +99,11 @@
             <section class="skills-card">
                 <h2>Database Management <span>DBMS</span></h2>
                 
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>SQL / MySQL</span> <span>80%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 80%;"></div></div>
-                </div>
+                <ul class="core-list">
+                    <li>SQL</li>
+                    <li>MySQL</li>
+                </ul>
+
                 <div class="tech-tags">
                     <span class="tech-tag">Relational Design</span>
                     <span class="tech-tag">Data Normalization</span>
@@ -121,15 +115,12 @@
             <section class="skills-card">
                 <h2>User Interface <span>Front-End</span></h2>
                 
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>HTML / CSS</span> <span>90%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 90%;"></div></div>
-                </div>
-                
-                <div class="skill-progress-wrapper">
-                    <div class="skill-info"><span>JavaScript</span> <span>75%</span></div>
-                    <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 75%;"></div></div>
-                </div>
+                <ul class="core-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+
                 <div class="tech-tags">
                     <span class="tech-tag">Responsive Layouts</span>
                     <span class="tech-tag">Flexbox & CSS Grid</span>
