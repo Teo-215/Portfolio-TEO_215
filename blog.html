@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TEO's Blog</title>
+    <style>
+        /* Basic Reset & Modern Typography */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+        /* Navigation Bar (Matches Main Site) */
+        nav { background-color: #2c3e50; padding: 15px; position: sticky; top: 0; z-index: 1000; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 20px; }
+        nav a { color: #fff; text-decoration: none; font-weight: bold; }
+        nav a:hover { color: #1abc9c; }
+
+        /* Blog Layout Container */
+        .blog-container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
+        
+        /* Blog Header */
+        .blog-header { text-align: center; margin-bottom: 50px; border-bottom: 3px solid #2c3e50; padding-bottom: 20px; }
+        .blog-header h1 { font-size: 2.8rem; color: #2c3e50; text-transform: uppercase; letter-spacing: 1px; }
+        .blog-header p { font-size: 1.1rem; color: #666; margin-top: 5px; font-style: italic; }
+
+        /* Blog Post Layout */
+        .blog-post { background: white; padding: 35px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 40px; }
+        .blog-post h3 { color: #2c3e50; font-size: 1.8rem; margin-bottom: 10px; }
+        
+        /* Meta info (Date, tags) */
+        .post-meta { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 20px; font-size: 0.85rem; color: #888; }
+        .post-date { font-weight: bold; color: #3498db; }
+        .post-tag { background: #eef2f7; color: #475569; padding: 2px 8px; border-radius: 4px; font-weight: 600; }
+
+        /* Post Body Content */
+        .blog-post p { color: #4a5568; font-size: 1.05rem; margin-bottom: 15px; text-align: justify; }
+        
+        /* Highlight boxes inside articles */
+        .highlight-box { background: #f8fafc; border-left: 4px solid #1abc9c; padding: 15px; margin: 15px 0; border-radius: 0 6px 6px 0; }
+        .highlight-box strong { color: #334155; }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <!-- Blog Header Section -->
+    <main class="blog-container">
+        <header class="blog-header">
+            <h1>TEO's Blog</h1>
+            <p>Documenting engineering breakthroughs, project builds, and full-stack solutions.</p>
+        </header>
+
+        <!-- Post 1: FacilEase -->
+        <article class="blog-post">
+            <h3>Building FacilEase for My Workshop</h3>
+            <div class="post-meta">
+                <span class="post-date">Recent Post</span>
+                <span class="post-tag">PHP CodeIgniter 4</span>
+                <span class="post-tag">React</span>
+                <span class="post-tag">Database Modeling</span>
+            </div>
+            <p>
+              Wrapping up the FacilEase system has been a great learning curve.
+              Moving away from standard inventory systems and focusing purely on
+              facility booking requirements challenged me to refine my database
+              models. Combining a PHP CodeIgniter 4 backend with a React
+              frontend really smoothed out the session filtering and login
+              functions.
+            </p>
+        </article>
+
+        <!-- Post 2: FYP Anti-Bullying System -->
+        <article class="blog-post">
+            <h3>Developing an AI-Powered Anti-Bullying System (FYP)</h3>
+            <div class="post-meta">
+                <span class="post-date">Project Log</span>
+                <span class="post-tag">AI Chatbot</span>
+                <span class="post-tag">Student Welfare</span>
+                <span class="post-tag">Security</span>
+            </div>
+            <p>
+              For my Final Year Project (FYP), I am developing a comprehensive technical solution targeting campus safety. The core architecture centers on securing student well-being through an anonymous reporting channel that allows vulnerable users to log incidents without fear of retaliation.
+            </p>
+            <div class="highlight-box">
+                <strong>Key Features Integrated:</strong> An automated AI chatbot capable of immediate natural text dialogue, secure anonymous report routing arrays, and a tracking dashboard to actively monitor student safety indicators.
+            </div>
+            <p>
+              Balancing user data encryption with active data monitoring frameworks was crucial to keeping the reporting mechanics trusted, reliable, and swift.
+            </p>
+        </article>
+
+        <!-- Post 3: IoT Athlete Performance Test -->
+        <article class="blog-post">
+            <h3>IoT Integration: Athlete Performance & Impact Testing</h3>
+            <div class="post-meta">
+                <span class="post-date">Hardware Log</span>
+                <span class="post-tag">IoT Sensors</span>
+                <span class="post-tag">G-Force</span>
+                <span class="post-tag">Embedded Systems</span>
+            </div>
+            <p>
+              This physical computing project bridges hardware automation with biometrics to evaluate athletic exertion levels. The module records raw impact metrics using real-time G-force accelerometers while mapping physiological stress using physical pulse sensors.
+            </p>
+            <p>
+              Filtering electrical noise out of the raw sensor data streams presented a challenging problem, but it taught me a lot about signal stability and how to properly interface firmware with physical tracking metrics.
+            </p>
+        </article>
+
+        <!-- Post 4: Forex Tracker -->
+        <article class="blog-post">
+            <h3>Building a Personal MYR - SGD Forex Tracker</h3>
+            <div class="post-meta">
+                <span class="post-date">Utility Build</span>
+                <span class="post-tag">Currency API</span>
+                <span class="post-tag">Data Storage</span>
+                <span class="post-tag">Financial App</span>
+            </div>
+            <p>
+              To solve a personal utility need, I engineered a regional Forex Tracker tool focusing on the MYR to SGD currency pair. The engine extracts real-time exchange rates, allows direct calculation conversions across custom parameters, and stores historical metrics cleanly.
+            </p>
+            <p>
+              Beyond basic math calculators, I integrated an internal ledger framework that records personal currency conversion transactions, giving me deep practice mapping localized transaction states over relational layouts.
+            </p>
+        </article>
+
+    </main>
+
+</body>
+</html>
